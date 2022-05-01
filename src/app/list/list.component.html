@@ -1,0 +1,13 @@
+<section class="hero">
+  <div class="hero-body">
+    <p class="title">
+      Users Page
+    </p>
+    <p class="subtitle">
+      <a routerLink="/">Go to home page</a>
+    </p>
+  </div>
+</section>
+<div style="display: flex; overflow-x: auto;">
+  <app-user *ngFor="let item of (allUsers | async)" [user]="item" style="width: 400px;"></app-user>
+</div>

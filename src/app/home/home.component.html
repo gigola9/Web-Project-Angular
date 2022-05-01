@@ -1,0 +1,33 @@
+<section class="hero">
+  <div class="hero-body">
+    <p class="title">
+      Home Page
+    </p>
+    <p class="subtitle">
+      <a routerLink="/list">Go to users page</a>
+    </p>
+  </div>
+</section>
+
+<div class="box main">
+  <h1 class="title">Two Way Data Binding</h1>
+  <input class="input" [(ngModel)]="txt">
+  <p>{{ txt }}</p>
+</div>
+
+<div class="box main">
+  <h1 class="title">REST API Requests</h1>
+  <button class="button" (click)="getData()">Get Data</button>
+</div>
+
+<div class="box main users" *ngIf="users && users.length > 0">
+  <h1 class="title">List of Users</h1>
+  <p *ngFor="let item of users; index as i; even as isEven" [ngStyle]="{'color': isEven ? 'green' : 'blue' }">
+    {{ (i + 1) + ')' + item.name + ' ' + item.username }}
+  </p>
+</div>
+
+<div class="box main">
+  <h1 class="title">Redirect to users page</h1>
+  <button class="button" (click)="redirectToUsers()">List of users</button>
+</div>
